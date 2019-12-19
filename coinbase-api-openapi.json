@@ -1,0 +1,553 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "",
+        "title": "Coinbase API",
+        "description": "The Coinbase v2 API",
+        "termsOfService": ""
+    },
+    "servers": [
+        "httpsapi.coinbase.com\/v2"
+    ],
+    "paths": {
+        "\/users\/{user_id}": {
+            "get": {
+                "summary": "Show a user",
+                "description": "Get any user\u2019s public information with their ID.",
+                "operationId": "GetAnyUsersPublicInformationWithTheirId",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "description": "The user id"
+                    }
+                ]
+            }
+        },
+        "\/user": {
+            "get": {
+                "summary": "Show current user",
+                "description": "Get current user\u2019s public information. To get user\u2019s email or private information, use permissions wallet:user:email and wallet:user:read.",
+                "operationId": "GetCurrentUsersPublicInformationToGetUsersEmailOrPrivateInformationUsePermissionsWalle",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "put": {
+                "summary": "Update current user",
+                "description": "Modify current user and their preferences.",
+                "operationId": "ModifyCurrentUserAndTheirPreferences",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Properties to update"
+                    }
+                ]
+            }
+        },
+        "\/user\/auth": {
+            "get": {
+                "summary": "Show authorization information",
+                "description": "Get current user\u2019s authorization information including granted scopes and send limits when using OAuth2 authentication.",
+                "operationId": "GetCurrentUsersAuthorizationInformationIncludingGrantedScopesAndSendLimitsWhenUsingOaut",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/accounts": {
+            "get": {
+                "summary": "List accounts",
+                "description": "Lists current user\u2019s accounts to which the authentication method has access to.",
+                "operationId": "ListsCurrentUsersAccountsToWhichTheAuthenticationMethodHasAccessTo",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "Create account",
+                "description": "Creates a new account for user.",
+                "operationId": "CreatesANewAccountForUser",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "account_properties",
+                        "in": "body",
+                        "description": "Account properties"
+                    }
+                ]
+            }
+        },
+        "\/accounts\/{account_id}": {
+            "get": {
+                "summary": "Show an account",
+                "description": "Show current user\u2019s account. To access user\u2019s primary account, primary keyword can be used instead of the account id in the URL.",
+                "operationId": "ShowCurrentUsersAccountToAccessUsersPrimaryAccountPrimaryKeywordCanBeUsedInsteadOfTh",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "The account id"
+                    }
+                ]
+            },
+            "put": {
+                "summary": "Update account",
+                "description": "Modifies user\u2019s account name.",
+                "operationId": "ModifiesUsersAccountName",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "The account id"
+                    },
+                    {
+                        "name": "account_properties",
+                        "in": "body",
+                        "description": "Account properties"
+                    }
+                ]
+            },
+            "delete": {
+                "summary": "Delete account",
+                "description": "Removes user\u2019s account. In order to remove an account it can\u2019t be\n\n- Primary account\n- Account with non-zero balance\n- Fiat account\n- Vault with a pending withdrawal\n",
+                "operationId": "RemovesUsersAccountInOrderToRemoveAnAccountItCantBePrimaryAccountAccountWithNonzero",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "The account id"
+                    }
+                ]
+            }
+        },
+        "\/accounts\/{account_id}\/primary": {
+            "get": {
+                "summary": "Set account as primary",
+                "description": "Promote an account as primary account.",
+                "operationId": "PromoteAnAccountAsPrimaryAccount",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "The account id"
+                    }
+                ]
+            }
+        },
+        "\/accounts\/{account_id}\/addresses": {
+            "get": {
+                "summary": "List addresses",
+                "description": "Lists addresses for an account.\n\n*Important*: Addresses should be considered one time use only.\n",
+                "operationId": "ListsAddressesForAnAccountimportantAddressesShouldBeConsideredOneTimeUseOnly",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "The account id"
+                    }
+                ]
+            },
+            "post": {
+                "summary": "Create address",
+                "description": "Creates a new address for an account. As all the arguments are optinal, it\u2019s possible just to do a empty POST which will create a new address. This is handy if you need to create new receive addresses for an account on-demand.\nAddresses can be created for all account types. With fiat accounts, funds will be received with Instant Exchange.\n",
+                "operationId": "CreatesANewAddressForAnAccountAsAllTheArgumentsAreOptinalItsPossibleJustToDoAEmpt",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "The account id"
+                    },
+                    {
+                        "name": "address_properties",
+                        "in": "body",
+                        "description": "Properties to update"
+                    }
+                ]
+            }
+        },
+        "\/accounts\/{account_id}\/addresses\/{address_id}": {
+            "get": {
+                "summary": "Show an address",
+                "description": "Show an individual address for an account.\nRegular bitcoin address can be used in place of address_id but the address has to be associated to the correct account.\n  \n*Important* Addresses should be considered one time use only. \n",
+                "operationId": "ShowAnIndividualAddressForAnAccountregularBitcoinAddressCanBeUsedInPlaceOfAddressId",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "The account id"
+                    },
+                    {
+                        "name": "address_id",
+                        "in": "path",
+                        "description": "The account id"
+                    }
+                ]
+            }
+        },
+        "\/accounts\/{account_id}\/addresses\/{address_id}\/transactions": {
+            "get": {
+                "summary": "List address\u2019s transactions",
+                "description": "list transactions that have been sent to a specific address. Regular bitcoin address can be used in place of address_id but the address has to be associated to the correct account.\n",
+                "operationId": "ListTransactionsThatHaveBeenSentToASpecificAddressRegularBitcoinAddressCanBeUsedInP",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "The account id"
+                    },
+                    {
+                        "name": "address_id",
+                        "in": "path",
+                        "description": "The account id"
+                    }
+                ]
+            }
+        },
+        "\/accounts\/{account_id}\/transactions": {
+            "get": {
+                "summary": "List transactions",
+                "description": "Lists account\u2019s transactions. See Transaction resource for more information.",
+                "operationId": "ListsAccountsTransactionsSeeTransactionResourceForMoreInformation",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "The account id"
+                    }
+                ]
+            },
+            "post": {
+                "summary": "Send or request money",
+                "description": "Type=send\n=========\n\nSend funds to a bitcoin address or email address. No transaction fees are required for off blockchain transactions, and Coinbase waives fees for on-blockchain transactions greater than 0.0001 BTC, up to a threshold of 25 per day. Read more about free transactions.\n\nWhen used with OAuth2 authentication, this endpoint requires two factor authentication unless used with wallet:transactions:send:bypass-2fa scope.\n\nIf the user is able to buy bitcoin, they can send funds from thei",
+                "operationId": "TypesendsendFundsToABitcoinAddressOrEmailAddressNoTransactionFeesAreRequiredForOffBl",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "The account id"
+                    },
+                    {
+                        "name": "transaction_options",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/accounts\/{account_id}\/transactions\/{transaction_id}": {
+            "get": {
+                "summary": "Show a transaction",
+                "description": "Show an individual transaction for an account. See Transaction resource for more information.",
+                "operationId": "ShowAnIndividualTransactionForAnAccountSeeTransactionResourceForMoreInformation",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "The account id"
+                    },
+                    {
+                        "name": "transaction_id",
+                        "in": "path",
+                        "description": "The transaction id"
+                    }
+                ]
+            },
+            "delete": {
+                "summary": "Cancel request money",
+                "description": "Lets a user cancel a money request. Money requests can be canceled by the sender or the recipient.",
+                "operationId": "LetsAUserCancelAMoneyRequestMoneyRequestsCanBeCanceledByTheSenderOrTheRecipient",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "The account id"
+                    },
+                    {
+                        "name": "transaction_id",
+                        "in": "path",
+                        "description": "The transaction id"
+                    }
+                ]
+            }
+        },
+        "\/accounts\/{account_id}\/transactions\/{transaction_id}\/complete": {
+            "post": {
+                "summary": "Complete request money",
+                "description": "Lets the recipient of a money request complete the request by sending money to the user who requested the money. This can only be completed by the user to whom the request was made, not the user who sent the request.",
+                "operationId": "LetsTheRecipientOfAMoneyRequestCompleteTheRequestBySendingMoneyToTheUserWhoRequeste",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "The account id"
+                    },
+                    {
+                        "name": "transaction_id",
+                        "in": "path",
+                        "description": "The transaction id"
+                    }
+                ]
+            }
+        },
+        "\/accounts\/{account_id}\/transactions\/{transaction_id}\/resend": {
+            "post": {
+                "summary": "Re-send request money",
+                "description": "Lets the user resend a money request. This will notify recipient with a new email.",
+                "operationId": "LetsTheUserResendAMoneyRequestThisWillNotifyRecipientWithANewEmail",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "The account id"
+                    },
+                    {
+                        "name": "transaction_id",
+                        "in": "path",
+                        "description": "The transaction id"
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "User": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "username": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "profile_location": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "profile_bio": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "profile_url": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "avatar_url": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "resource": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "resource_path": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "Pagination": {
+                "type": "object",
+                "properties": {
+                    "ending_before": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "starting_after": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "limit": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "order": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "previous_uri": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "next_uri": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "MoneyHash": {
+                "type": "object",
+                "properties": {
+                    "amount": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "currency": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "Account": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "primary": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "type": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "currency": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "created_at": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "updated_at": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "resource": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "resource_path": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "Address": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "address": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "created_at": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "updated_at": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "resource": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "resource_path": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            },
+            "Transaction": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "type": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "status": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "description": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "instant_exchange": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "created_at": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "updated_at": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "resource": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "resource_path": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "details": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "network": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "to": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "from": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "address": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "application": {
+                        "description": "",
+                        "type": "post"
+                    }
+                }
+            }
+        }
+    }
+}
