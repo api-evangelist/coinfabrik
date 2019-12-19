@@ -1,0 +1,672 @@
+{
+    "id": "1261e53b7977af3b045c664af29f190b",
+    "name": "Coinbase API",
+    "description": null,
+    "auth": null,
+    "events": null,
+    "variables": [],
+    "order": [],
+    "folders_order": [],
+    "folders": [],
+    "requests": [
+        {
+            "id": "2db331974d844d5266a27606ddcb28ae",
+            "name": "Show a user",
+            "url": "httpsapi.coinbase.com\/v2\/users\/{user_id}",
+            "description": "Get any user\u2019s public information with their ID.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "user_id",
+                    "description": "The user id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1261e53b7977af3b045c664af29f190b",
+            "rawModeData": ""
+        },
+        {
+            "id": "ea3c14e754baffb28f9a350cad964907",
+            "name": "Show current user",
+            "url": "httpsapi.coinbase.com\/v2\/user",
+            "description": "Get current user\u2019s public information. To get user\u2019s email or private information, use permissions wallet:user:email and wallet:user:read.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1261e53b7977af3b045c664af29f190b",
+            "rawModeData": ""
+        },
+        {
+            "id": "2b14aad707290b77877cb696c09d9128",
+            "name": "Update current user",
+            "url": "httpsapi.coinbase.com\/v2\/user",
+            "description": "Modify current user and their preferences.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "put",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "body",
+                    "description": "Properties to update",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1261e53b7977af3b045c664af29f190b",
+            "rawModeData": ""
+        },
+        {
+            "id": "bac1652e2eb520922bf37fd83d8d396b",
+            "name": "Show authorization information",
+            "url": "httpsapi.coinbase.com\/v2\/user\/auth",
+            "description": "Get current user\u2019s authorization information including granted scopes and send limits when using OAuth2 authentication.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1261e53b7977af3b045c664af29f190b",
+            "rawModeData": ""
+        },
+        {
+            "id": "7ddee879ca7efab45ac7817a916d5f17",
+            "name": "List accounts",
+            "url": "httpsapi.coinbase.com\/v2\/accounts",
+            "description": "Lists current user\u2019s accounts to which the authentication method has access to.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1261e53b7977af3b045c664af29f190b",
+            "rawModeData": ""
+        },
+        {
+            "id": "eb043d566bd982d4830d9c0060d7db56",
+            "name": "Create account",
+            "url": "httpsapi.coinbase.com\/v2\/accounts",
+            "description": "Creates a new account for user.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "account_properties",
+                    "description": "Account properties",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1261e53b7977af3b045c664af29f190b",
+            "rawModeData": ""
+        },
+        {
+            "id": "e06bef097c5f3712754f1207f9e2eb59",
+            "name": "Show an account",
+            "url": "httpsapi.coinbase.com\/v2\/accounts\/{account_id}",
+            "description": "Show current user\u2019s account. To access user\u2019s primary account, primary keyword can be used instead of the account id in the URL.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "account_id",
+                    "description": "The account id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1261e53b7977af3b045c664af29f190b",
+            "rawModeData": ""
+        },
+        {
+            "id": "fbbe21f4d89196b1eb08fa9fc2f9ee78",
+            "name": "Update account",
+            "url": "httpsapi.coinbase.com\/v2\/accounts\/{account_id}",
+            "description": "Modifies user\u2019s account name.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "put",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "account_id",
+                    "description": "The account id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "account_properties",
+                    "description": "Account properties",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1261e53b7977af3b045c664af29f190b",
+            "rawModeData": ""
+        },
+        {
+            "id": "b0d0fbca6ee0f0aed88c4f9f33e199a4",
+            "name": "Delete account",
+            "url": "httpsapi.coinbase.com\/v2\/accounts\/{account_id}",
+            "description": "Removes user\u2019s account. In order to remove an account it can\u2019t be\n\n- Primary account\n- Account with non-zero balance\n- Fiat account\n- Vault with a pending withdrawal\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "account_id",
+                    "description": "The account id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1261e53b7977af3b045c664af29f190b",
+            "rawModeData": ""
+        },
+        {
+            "id": "cad3098c8f33f3b4cd728d729358fff6",
+            "name": "Set account as primary",
+            "url": "httpsapi.coinbase.com\/v2\/accounts\/{account_id}\/primary",
+            "description": "Promote an account as primary account.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "account_id",
+                    "description": "The account id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1261e53b7977af3b045c664af29f190b",
+            "rawModeData": ""
+        },
+        {
+            "id": "7a0165bf6c747c1e8e39c5e98926b6ac",
+            "name": "List addresses",
+            "url": "httpsapi.coinbase.com\/v2\/accounts\/{account_id}\/addresses",
+            "description": "Lists addresses for an account.\n\n*Important*: Addresses should be considered one time use only.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "account_id",
+                    "description": "The account id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1261e53b7977af3b045c664af29f190b",
+            "rawModeData": ""
+        },
+        {
+            "id": "403f621e0fda05f4b96dabcba7ce41ce",
+            "name": "Create address",
+            "url": "httpsapi.coinbase.com\/v2\/accounts\/{account_id}\/addresses",
+            "description": "Creates a new address for an account. As all the arguments are optinal, it\u2019s possible just to do a empty POST which will create a new address. This is handy if you need to create new receive addresses for an account on-demand.\nAddresses can be created for all account types. With fiat accounts, funds will be received with Instant Exchange.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "account_id",
+                    "description": "The account id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "address_properties",
+                    "description": "Properties to update",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1261e53b7977af3b045c664af29f190b",
+            "rawModeData": ""
+        },
+        {
+            "id": "c1936f55d3f66fc49371285b9214da5a",
+            "name": "Show an address",
+            "url": "httpsapi.coinbase.com\/v2\/accounts\/{account_id}\/addresses\/{address_id}",
+            "description": "Show an individual address for an account.\nRegular bitcoin address can be used in place of address_id but the address has to be associated to the correct account.\n  \n*Important* Addresses should be considered one time use only. \n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "account_id",
+                    "description": "The account id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "address_id",
+                    "description": "The account id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1261e53b7977af3b045c664af29f190b",
+            "rawModeData": ""
+        },
+        {
+            "id": "a836225bb0f0f23f5d366e8dd28ac7c8",
+            "name": "List address\u2019s transactions",
+            "url": "httpsapi.coinbase.com\/v2\/accounts\/{account_id}\/addresses\/{address_id}\/transactions",
+            "description": "list transactions that have been sent to a specific address. Regular bitcoin address can be used in place of address_id but the address has to be associated to the correct account.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "account_id",
+                    "description": "The account id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "address_id",
+                    "description": "The account id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1261e53b7977af3b045c664af29f190b",
+            "rawModeData": ""
+        },
+        {
+            "id": "8b6799f9c02183a093c64d56c168ad06",
+            "name": "List transactions",
+            "url": "httpsapi.coinbase.com\/v2\/accounts\/{account_id}\/transactions",
+            "description": "Lists account\u2019s transactions. See Transaction resource for more information.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "account_id",
+                    "description": "The account id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1261e53b7977af3b045c664af29f190b",
+            "rawModeData": ""
+        },
+        {
+            "id": "f09bada52d721ee2a828b94c0165f31f",
+            "name": "Send or request money",
+            "url": "httpsapi.coinbase.com\/v2\/accounts\/{account_id}\/transactions",
+            "description": "Type=send\n=========\n\nSend funds to a bitcoin address or email address. No transaction fees are required for off blockchain transactions, and Coinbase waives fees for on-blockchain transactions greater than 0.0001 BTC, up to a threshold of 25 per day. Read more about free transactions.\n\nWhen used with OAuth2 authentication, this endpoint requires two factor authentication unless used with wallet:transactions:send:bypass-2fa scope.\n\nIf the user is able to buy bitcoin, they can send funds from thei",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "account_id",
+                    "description": "The account id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "transaction_options",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1261e53b7977af3b045c664af29f190b",
+            "rawModeData": ""
+        },
+        {
+            "id": "b1b297d50ca878b409a57458c272b010",
+            "name": "Show a transaction",
+            "url": "httpsapi.coinbase.com\/v2\/accounts\/{account_id}\/transactions\/{transaction_id}",
+            "description": "Show an individual transaction for an account. See Transaction resource for more information.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "account_id",
+                    "description": "The account id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "transaction_id",
+                    "description": "The transaction id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1261e53b7977af3b045c664af29f190b",
+            "rawModeData": ""
+        },
+        {
+            "id": "22979c8e9fc6599f2dfa1a23d35d302e",
+            "name": "Cancel request money",
+            "url": "httpsapi.coinbase.com\/v2\/accounts\/{account_id}\/transactions\/{transaction_id}",
+            "description": "Lets a user cancel a money request. Money requests can be canceled by the sender or the recipient.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "account_id",
+                    "description": "The account id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "transaction_id",
+                    "description": "The transaction id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1261e53b7977af3b045c664af29f190b",
+            "rawModeData": ""
+        },
+        {
+            "id": "1911694a87d40db37d07ef98b2fdae48",
+            "name": "Complete request money",
+            "url": "httpsapi.coinbase.com\/v2\/accounts\/{account_id}\/transactions\/{transaction_id}\/complete",
+            "description": "Lets the recipient of a money request complete the request by sending money to the user who requested the money. This can only be completed by the user to whom the request was made, not the user who sent the request.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "account_id",
+                    "description": "The account id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "transaction_id",
+                    "description": "The transaction id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1261e53b7977af3b045c664af29f190b",
+            "rawModeData": ""
+        },
+        {
+            "id": "0a48f3c1ca07521f7825c653359f7bc5",
+            "name": "Re-send request money",
+            "url": "httpsapi.coinbase.com\/v2\/accounts\/{account_id}\/transactions\/{transaction_id}\/resend",
+            "description": "Lets the user resend a money request. This will notify recipient with a new email.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "account_id",
+                    "description": "The account id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "transaction_id",
+                    "description": "The transaction id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1261e53b7977af3b045c664af29f190b",
+            "rawModeData": ""
+        }
+    ]
+}
